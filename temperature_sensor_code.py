@@ -8,7 +8,8 @@ os.system('modprobe w1-therm')
 base_dir = '/sys/bus/w1/devices/'
 device_folder = glob.glob(base_dir + '28*')[0]
 device_file = device_folder + '/w1_slave'
- 
+# 28-030e97946b27 - incoming air temperature
+# 28-030a979451b3 - outgoing air temperature before heat exchanger 
 def read_temp_raw():
     f = open(device_file, 'r')
     lines = f.readlines()
